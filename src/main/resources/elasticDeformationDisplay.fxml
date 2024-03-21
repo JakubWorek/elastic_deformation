@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minHeight="600.0" minWidth="800.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="proj.Presenter.ElasticDeformationPresenter">
+    <bottom>
+        <HBox alignment="CENTER" maxWidth="800.0" minWidth="800.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER">
+                <Label text="Wybierz N - liczbe elementów skończonych:"/>
+                <Spinner fx:id="elementySkonczone" editable="true" prefWidth="70.0">
+                    <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                    </VBox.margin>
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" max="100" min="2" />
+                    </valueFactory>
+                </Spinner>
+            </VBox>
+        </HBox>
+    </bottom>
+    <center>
+        <LineChart fx:id="wykres" animated="false" horizontalZeroLineVisible="false" legendVisible="false" verticalZeroLineVisible="false" BorderPane.alignment="CENTER">
+            <xAxis>
+                <NumberAxis autoRanging="false" label="x" lowerBound="-0.2" side="BOTTOM" tickUnit="0.2" upperBound="2.2" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis autoRanging="false" label="u(x)" lowerBound="-2.0" side="LEFT" tickUnit="2.0" upperBound="30.0" />
+            </yAxis>
+        </LineChart>
+    </center>
+</BorderPane>
+
